@@ -1,0 +1,23 @@
+## All-Reduce
+Average MPI.Allreduce time: 0.000014 seconds
+Average myAllreduce time:   0.000021 seconds
+time difference: 0.000007 seconds slower
+
+## All-to-all
+Average MPI.Alltoall time: 0.000020 seconds
+Average myAlltoall time:   0.000036 seconds
+time difference: 0.000016 seconds slower
+________________________________________________________________________________________________________________________
+1. One of the plausible reasons why the custom implementation is slower than the built-in is that MPI might be using
+some of the advanced and optimized algorithms discussed in class like the Minimum Spanning Tree (MST) or Ring algorithm.
+These algos handle communication much better and in an optimized manner. These implementations are not specialized for
+the root/master.
+
+On the other hand, the custom implementation involves
+- Only rank 0 receiving data from all other ranks.
+- Only rank 0 performing the reduction and sending the result to all ranks.
+________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________
+2. Another plausible reason is that MPI under the hood handles memory allocation and synchronization much more efficiently
+than a custom implementation and uses specialized techniques to optimize network usage, which is harder to replicate manually.
+________________________________________________________________________________________________________________________

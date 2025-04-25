@@ -1,0 +1,16 @@
+1. the intuition behind fused operators
+Instead of performing two separate operations one after the other in a computation graph, we can merge them into a
+single operation. This reduces the number of times data is read from and written to memory, making the process more
+efficient. By fusing operations, we can speed up execution and improve performance, which is especially important in
+modern deep learning systems where efficiency matters.
+
+2. why it works for improving efficiency
+There are many reasons:
+a. It can simplify the maths happening behind the scenes which helps reduce repititive calculations, hence, computationally faster and efficient.
+b. Normally, when you do two operations separately, the first one saves its result in memory before the second one can use it. With fusion, the
+result goes straight to the next step without needing to be stored, which saves time.
+
+3. potential future improvements to these operators
+I worked on this assignment using my CPU, but performance can be improved, especially on GPUs:
+a. Optimized Libraries – Using cuDNN, cuBLAS, or tools like TVM and Triton can generate faster, more efficient fused operators.
+b. Lower Precision Data Types – Switching from FP32 to FP16 or INT8 can speed up computations and reduce memory use.

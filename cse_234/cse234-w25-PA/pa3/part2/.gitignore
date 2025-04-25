@@ -1,0 +1,51 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments
+venv/
+env/
+pip-wheel-metadata/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# Compiled C extensions
+*.so
+
+# macOS Trash files
+.Trashes
+._*
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python packaging
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Testing and Coverage
+.tox/
+.coverage
+.coverage.*
+*.cover
+nosetests.xml
+coverage.xml
+htmlcov/
+pytest_cache/
